@@ -15,7 +15,7 @@ if ($mysqli->error) {
         alert('Maaf! Nama tersebut sudah wujud dalam senarai');
         window.location = 'index.php';
     </script>
-    <?php
+    <?php   
     exit;
 } else {
     header('location: index.php');

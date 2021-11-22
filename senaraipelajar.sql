@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 18, 2021 at 06:03 AM
+-- Generation Time: Nov 22, 2021 at 10:29 AM
 -- Server version: 10.4.18-MariaDB
 -- PHP Version: 8.0.3
 
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `dfp50193_php_crud`
+-- Database: `dfp50193_crud_php`
 --
 
 -- --------------------------------------------------------
@@ -29,36 +29,9 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `senaraipelajar` (
   `idsenarai` int(11) NOT NULL,
-  `name` varchar(100) NOT NULL,
-  `ic` varchar(15) NOT NULL
+  `nama` varchar(100) NOT NULL,
+  `ic` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data for table `senaraipelajar`
---
-
-INSERT INTO `senaraipelajar` (`idsenarai`, `name`, `ic`) VALUES
-(1, 'MUHAMMAD KHAIRUL ZAKWAN', '010510090069');
-
---
--- Indexes for dumped tables
---
-
---
--- Indexes for table `senaraipelajar`
---
-ALTER TABLE `senaraipelajar`
-  ADD PRIMARY KEY (`idsenarai`);
-
---
--- AUTO_INCREMENT for dumped tables
---
-
---
--- AUTO_INCREMENT for table `senaraipelajar`
---
-ALTER TABLE `senaraipelajar`
-  MODIFY `idsenarai` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

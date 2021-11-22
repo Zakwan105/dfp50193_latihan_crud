@@ -1,31 +1,22 @@
-<?php
-require 'conn.php';
-?>
+<?php require 'conn.php' ?>
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PHP CRUD</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <style type="text/css">
-        .wrapper {
-            width: 1300px;
-            margin: 0 auto;
-        }
-    </style>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PHP CRUD</title>
 </head>
 
 <body>
-
-    <br><a href="tambah.php">Add New</a><br><br>
+    <a href="tambah.php">Add new</a>
     <table border="1" cellpadding="8" cellspacing="0">
-        <tr bgcolor="#66CDAA">
+        <tr bgcolor="#ffd700">
             <th>Bil</th>
-            <th>Nama Pelajar</th>
+            <th>Nama</th>
             <th>No Kad Pengenalan</th>
             <th>Tindakan</th>
         </tr>
@@ -37,12 +28,12 @@ require 'conn.php';
         ?>
                 <tr>
                     <td><?php echo $bil++; ?></td>
-                    <td><?php echo $row->name; ?></td>
+                    <td><?php echo $row->nama; ?></td>
                     <td><?php echo $row->ic; ?></td>
                     <td>
-                        <a href="update.php?idsenarai=<?php echo $row->idsenarai; ?>">Edit</a>
+                        <a href="kemaskini.php?idsenarai=<?php echo $row->idsenarai; ?>">Edit</a>
                         |
-                        <a href="padam.php?idsenarai=<?php echo $row->idsenarai; ?>" onclick="return confirm('Are you sure you want to delete ?');">Padam</a>
+                        <a href="padam.php?idsenarai=<?php echo $row->idsenarai; ?>" onclick="return confirm('Adakah anda ingin padam!??');">Padam</a>
                     </td>
                 </tr>
         <?php

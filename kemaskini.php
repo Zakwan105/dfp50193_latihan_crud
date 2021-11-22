@@ -1,25 +1,32 @@
 <?php
 require 'conn.php';
-
-$idsenarai = $_POST['idsenarai'];
-$name = $_POST['name'];
-$ic = $_POST['ic'];
-
-$sql = "UPDATE senaraipelajar SET name = ?, ic = ? WHERE idsenarai = ?";
+$idsenarai = $_GET['idsenarai'];
+$sql = "SELECT * FROM senaraipelajar WHERE idsenarai = ?";
 $stmt = $conn->prepare($sql);
-$stmt->bind_param('ssi', $name, $ic, $idsenarai);
+$stmt->bind_param('i', $idsenarai);
 $stmt->execute();
-
-if ($mysqli->error) {
+$result = $stmt->get_result();
+$row = $result->fetch_object();
 ?>
-    <script>
-        alert('Sorry! The name already exists in the list');
-
-
-        window.location = 'index.php';
-    </script>
-<?php
-    exit;
-} else {
-    header('location: index.php');
-}
+<form action="simpan_kemaskini.php" method="post">
+    <input type="hidden" name="idsenarai" value="<?php echo $row->idsenarai; ?>" />
+    <table>
+        <tr>
+            <td><label for="nama">Nama </label></td>
+            <td>
+                <input id="nama" type="text" name="nama" value="<?php echo $row->nama; ?>" required />
+            </td>
+        </tr>
+        <tr>
+            <td><label for="ic">No Kad Pengenalan</label></td>
+            <td>
+                <input id="ic" type="text" step="any" name="ic" value="<?php echo $row->ic; ?>" required />
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2" align="center">
+                <button type="submit">SIMPAN</button>
+            </td>
+        </tr>
+    </table>
+</form>

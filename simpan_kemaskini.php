@@ -1,15 +1,16 @@
 <?php
 require 'conn.php';
 
+$idsenarai = $_POST['idsenarai'];
 $nama = $_POST['nama'];
 $ic = $_POST['ic'];
 
-$sql = "INSERT INTO senaraipelajar (nama, ic) VALUES (?, ?)";
+$sql = "UPDATE senaraipelajar SET nama = ?, ic = ? WHERE idsenarai = ?";
 $stmt = $conn->prepare($sql);
-$stmt->bind_param('si', $nama, $ic);
+$stmt->bind_param('sii', $nama, $ic, $idsenarai);
 $stmt->execute();
 
-if ($conn->error) {
+if ($mysqli->error) {
 ?>
     <script>
         alert('Maaf! Nama tersebut sudah wujud dalam senarai');

@@ -24,10 +24,10 @@ require 'conn.php';
 <br><a href="tambah.php">Add New</a><br><br>
     <table border="1" cellpadding="8" cellspacing="0">
         <tr bgcolor="#66CDAA">
-            <th>Bil</th>
-            <th>Nama Pelajar</th>
-            <th>No Kad Pengenalan</th>
-            <th>Tindakan</th>
+            <th><center>Bil</center></th>
+           <th><center>Nama Pelajar</center></th>
+            <th><center>No Kad Pengenalan</center></th>
+            <th><center>Tindakan</center></th>
         </tr>
         <?php
         $bil = 1;

@@ -12,7 +12,7 @@ $stmt->execute();
 if ($mysqli->error) {
     ?>
     <script>
-        alert('Maaf! Nama tersebut sudah wujud dalam senarai');
+        alert('Sorry! The name already exists in the list');
         window.location = 'index.php';
     </script>
     <?php   

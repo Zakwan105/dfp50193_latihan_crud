@@ -1,13 +1,13 @@
 <?php
-    require 'conn.php';
-    $idsenarai = $_GET['idsenarai'];
-    $sql = "SELECT * FROM senaraipelajar WHERE idsenarai = ?";
-    $stmt = $conn->prepare($sql);
-    $stmt->bind_param('i', $idsenarai);
-    $stmt->execute();
-    $result = $stmt->get_result();
-    $row = $result->fetch_object();
-    ?>
+require 'conn.php';
+$idsenarai = $_GET['idsenarai'];
+$sql = "SELECT * FROM senaraipelajar WHERE idsenarai = ?";
+$stmt = $conn->prepare($sql);
+$stmt->bind_param('i', $idsenarai);
+$stmt->execute();
+$result = $stmt->get_result();
+$row = $result->fetch_object();
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -25,13 +25,13 @@
             <tr>
                 <td><label for="nama">Nama:</label></td>
                 <td>
-                    <input id="name" type="text" size="60% name="name" value="<?php echo $row->name; ?>" required />
+                    <input id="name" type="text" size="60% name=" name" value="<?php echo $row->name; ?>" required />
                 </td>
             </tr>
             <tr>
                 <td><label for="ic">No Kad Pengenalan:</label></td>
                 <td>
-                    <input id="ic" type="text" size="60% step="any" name="ic" value="<?php echo $row->ic; ?>" required />
+                    <input id="ic" type="text" size="60% step=" any" name="ic" value="<?php echo $row->ic; ?>" required />
                 </td>
             </tr>
             <tr>

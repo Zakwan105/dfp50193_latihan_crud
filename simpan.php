@@ -10,12 +10,12 @@ $stmt->bind_param('ss', $name, $ic);
 $stmt->execute();
 
 if ($mysqli->error) {
-    ?>
+?>
     <script>
         alert('Sorry! The name already exists in the list');
         window.location = 'index.php';
     </script>
-    <?php   
+<?php
     exit;
 } else {
     header('location: index.php');

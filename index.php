@@ -20,8 +20,8 @@ require 'conn.php';
 </head>
 
 <body>
-    
-<br><a href="tambah.php">Add New</a><br><br>
+
+    <br><a href="tambah.php">Add New</a><br><br>
     <table border="1" cellpadding="8" cellspacing="0">
         <tr bgcolor="#66CDAA">
             <th>Bil</th>

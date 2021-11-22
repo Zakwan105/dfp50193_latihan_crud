@@ -8,5 +8,4 @@ $stmt = $conn->prepare($sql);
 $stmt->bind_param('i', $idsenarai);
 $stmt->execute();
 
-header('location: index.php')
-;
+header('location: index.php');

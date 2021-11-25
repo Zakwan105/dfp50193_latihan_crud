@@ -19,7 +19,7 @@
 			<input type="text" name="ic" value="">
 		</div>
 		<div class="input-group">
-			<button class="btn" type="submit" name="save" >Simpan</button>
+			<br><button class="btn" type="submit" name="save" >Simpan</button>
 		</div>
 	</form>
 </body>

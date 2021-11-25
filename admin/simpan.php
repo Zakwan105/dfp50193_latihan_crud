@@ -1,5 +1,5 @@
 <?php
-require 'conn.php';
+require '../conn.php';
 
 $nama = $_POST['nama'];
 $ic = $_POST['ic'];

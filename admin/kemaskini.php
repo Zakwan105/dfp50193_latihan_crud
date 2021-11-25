@@ -1,5 +1,5 @@
 <?php
-require 'conn.php';
+require '../conn.php';
 $idsenarai = $_GET['idsenarai'];
 $sql = "SELECT * FROM senaraipelajar WHERE idsenarai = ?";
 $stmt = $conn->prepare($sql);

@@ -21,27 +21,30 @@ $idpengguna = $_SESSION['idpengguna'];
  <?php echo "Selamat Datang Admin"; ?><br><br>
 
     <a href="tambah.php">Add new</a>
-    <table border="1" cellpadding="8" cellspacing="0">
+    <br><br> <table border="1" cellpadding="8" cellspacing="0">
         <tr bgcolor="#B0E0E6">
             <th>Bil</th>
-            <th>Nama</th>
-            <th>No Kad Pengenalan</th>
+            <th>Id Pengguna</th>
+            <th>Nama Staff</th>
             <th>Tindakan</th>
         </tr>
         <?php
         $bil = 1;
-        $sql = "SELECT * FROM senaraipelajar";
+        $sql = "SELECT * FROM staff";
         if ($result = $conn->query($sql)) {
             while ($row = $result->fetch_object()) {
         ?>
                 <tr>
                     <td><?php echo $bil++; ?></td>
-                    <td><?php echo $row->nama; ?></td>
-                    <td><?php echo $row->ic; ?></td>
+                    <td><?php echo $row->idpengguna; ?></td>
+                    <td><?php echo $row->staff_name; ?></td>
+                    
                     <td>
-                        <a href="kemaskini.php?idsenarai=<?php echo $row->idsenarai; ?>">Edit</a>
+                        <a href="kemaskini.php?idstaff=<?php echo $row->idstaff; ?>">Edit</a>
                         |
-                        <a href="padam.php?idsenarai=<?php echo $row->idsenarai; ?>" onclick="return confirm('Adakah anda ingin padam!??');">Padam</a>
+                        <a href="padam.php?idstaff=<?php echo $row->idstaff; ?>" onclick="return confirm('Adakah anda ingin padam !??');">Padam</a>
+                        |
+                        <a href="reset.php?idstaff=<?php echo $row->idstaff; ?>">Reset</a>
                     </td>
                 </tr>
                 

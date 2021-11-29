@@ -11,12 +11,12 @@
 <body>
 <form method="post" action="simpan.php" >
 		<div class="input-group">
-			<label>Name</label>
-			<input type="text" name="nama" value="">
+			<label>Id pengguna</label>
+			<input type="text" name="idstaff" value="">
 		</div>
 		<div class="input-group">
-			<label>IC</label>
-			<input type="text" name="ic" value="">
+			<label>Nama pengguna</label>
+			<input type="text" name="staff_name" value="">
 		</div>
 		<div class="input-group">
 			<br><button class="btn" type="submit" name="save" >Simpan</button>

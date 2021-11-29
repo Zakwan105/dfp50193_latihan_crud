@@ -1,13 +1,13 @@
 <?php
 require '../conn.php';
 
-$idsenarai = $_POST['idsenarai'];
-$nama = $_POST['nama'];
-$ic = $_POST['ic'];
+$idpengguna = $_POST['idpengguna'];
+$idstaff = $_POST['idstaff'];
+$staff_name = $_POST['staff_name'];
 
-$sql = "UPDATE senaraipelajar SET nama = ?, ic = ? WHERE idsenarai = ?";
+$sql = "UPDATE staff SET idstaff = ?, staff_name = ? WHERE idpengguna = ?";
 $stmt = $conn->prepare($sql);
-$stmt->bind_param('ssi', $nama, $ic, $idsenarai);
+$stmt->bind_param('ssi', $idstaff, $staff_name, $idpengguna);
 $stmt->execute();
 
 if ($conn->error) {

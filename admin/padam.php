@@ -1,11 +1,11 @@
 <?php
 require '../conn.php';
 
-$idsenarai = $_GET['idsenarai'];
+$idstaff = $_GET['idstaff'];
 
-$sql = "DELETE FROM senaraipelajar WHERE idsenarai = ?";
+$sql = "DELETE FROM staff WHERE idstaff = ?";
 $stmt = $conn->prepare($sql);
-$stmt->bind_param('i', $idsenarai);
+$stmt->bind_param('i', $idstaff);
 $stmt->execute();
 
 header('location: index.php');

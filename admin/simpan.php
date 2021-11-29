@@ -1,12 +1,12 @@
 <?php
 require '../conn.php';
 
-$nama = $_POST['nama'];
-$ic = $_POST['ic'];
+$idstaff = $_POST['idstaff'];
+$staff_name = $_POST['staff_name'];
 
-$sql = "INSERT INTO senaraipelajar (nama, ic) VALUES (?, ?)";
+$sql = "INSERT INTO staff (idstaff, staff_name) VALUES (?, ?)";
 $stmt = $conn->prepare($sql);
-$stmt->bind_param('si', $nama, $ic);
+$stmt->bind_param('si', $idstaff, $staff_name);
 $stmt->execute();
 
 if ($conn->error) {
